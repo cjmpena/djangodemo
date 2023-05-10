@@ -19,7 +19,8 @@ class ProductListCreateAPIView(
         content = serializer.validated_data.get('content') or None
         if content is None:
             content = title
-        serializer.save(content=content)
+        serializer.save(content=content) # form.save()
+        # Sending out a Django signal
     
 product_list_create_view = ProductListCreateAPIView.as_view()
 
